@@ -4,6 +4,7 @@ var redis = require("redis"),
 
 const { promisify } = require("util");
 const setAsync = promisify(client.set).bind(client);
+3;
 
 const baseURL = `https://jobs.github.com/positions.json`;
 
@@ -33,7 +34,8 @@ module.exports = fetchGithub = async () => {
       jobTitle.includes("senior") ||
       jobTitle.includes("manager") ||
       jobTitle.includes("sr.") ||
-      jobTitle.includes("architect")
+      jobTitle.includes("architect") ||
+      jobTitle.includes("lead")
     ) {
       return false;
     } else {
